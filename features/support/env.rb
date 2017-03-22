@@ -103,7 +103,7 @@ Before do
 end
 
 # Force deprecations to raise an exception.
-ActiveSupport::Deprecation.behavior = :raise
+ActiveSupport::Deprecation.behavior = ActiveAdmin::Dependency.rails?('< 5.1.x') ? :raise : :stderr # FIXME: need database_cleaner 1.6.0.
 
 # improve the performance of the specs suite by not logging anything
 # see http://blog.plataformatec.com.br/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/
