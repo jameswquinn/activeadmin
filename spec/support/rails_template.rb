@@ -133,6 +133,7 @@ gsub_file 'config/environments/test.rb', /  config.cache_classes = true/, <<-RUB
 
   config.cache_classes = !ENV['CLASS_RELOADING']
   config.action_mailer.default_url_options = {host: 'example.com'}
+  config.assets.unknown_asset_fallback = true
 
   if Rails::VERSION::MAJOR >= 4 && Rails::VERSION::MINOR >= 1
     config.active_record.maintain_test_schema = false
