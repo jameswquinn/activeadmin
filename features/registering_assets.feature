@@ -12,8 +12,8 @@ Feature: Registering Assets
 
   Scenario: Viewing default asset files
     When I am on the index page for posts
-    Then I should see the css file "active_admin.css"
-    Then I should see the js file "active_admin.js"
+    Then I should see the css file "active_admin"
+    Then I should see the js file "active_admin"
 
   Scenario: Registering a CSS file
     Given a configuration of:
