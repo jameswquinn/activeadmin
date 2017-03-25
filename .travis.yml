@@ -9,6 +9,8 @@ bundler_args: --without development
 cache: bundler
 
 before_install:
+  - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install 4
+  - npm install -g yarn
   - PATH=$(npm bin):$PATH # needed to install phantomjs via npm
   - if [ $(phantomjs --version) != '2.1.1' ]; then npm install phantomjs-prebuilt@2.1; fi
   - gem update --system # use the very latest Rubygems
